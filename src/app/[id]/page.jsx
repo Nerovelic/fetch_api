@@ -56,41 +56,46 @@ const Page = ({ params: { id } }) => {
       <h2 className="text-center py-5">
         Eslogan: {data ? data.description : "Cargando..."}
       </h2>
-      <h2 className="text-center py-5">Marca: {data?.brand}</h2>
-      <h2 className="text-center py-5">Categoria: {data?.category}</h2>
+      <h2 className="text-center py-2">Marca: {data?.brand}</h2>
+      <h2 className="text-center py-2">Categoria: {data?.category}</h2>
+      <h2 className="text-center py-5">Disponibles: {data?.stock} unidades</h2>
 
-      <h1 className="text-center text-2xl py-2"> Galeria de Fotos</h1>
-      <div className="flex justify-center pb-5">
-        {selectedImage && (
-          <Image
-            className="py-5"
-            src={selectedImage}
-            alt="product image"
-            width={300}
-            height={300}
-            style={{ width: 300, height: 300 }}
-          />
-        )}
-      </div>
-      <div className="flex justify-center">
-        {data && data.images && data.images.length > 0 && (
-          <div className="flex justify-center">
-            {data.images.map((image, index) => (
-              <div
-                key={index}
-                style={{ marginRight: "10px", cursor: "pointer" }}
-                onClick={() => handleThumbnailClick(image)}
-              >
-                <Image
-                  src={image}
-                  alt={`product image ${index}`}
-                  width={100}
-                  height={100}
-                />
-              </div>
-            ))}
+      <div className="mx-[25%] bg-slate-600 mb-10">
+        <div className="pb-10">
+          <h1 className="text-center text-2xl py-2"> Galeria de Fotos</h1>
+          <div className="flex justify-center pb-5">
+            {selectedImage && (
+              <Image
+                className="py-5"
+                src={selectedImage}
+                alt="product image"
+                width={300}
+                height={300}
+                style={{ width: 300, height: 300 }}
+              />
+            )}
           </div>
-        )}
+          <div className="flex justify-center">
+            {data && data.images && data.images.length > 0 && (
+              <div className="flex justify-center">
+                {data.images.map((image, index) => (
+                  <div
+                    key={index}
+                    style={{ marginRight: "10px", cursor: "pointer" }}
+                    onClick={() => handleThumbnailClick(image)}
+                  >
+                    <Image
+                      src={image}
+                      alt={`product image ${index}`}
+                      width={100}
+                      height={100}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
       <button
@@ -98,7 +103,7 @@ const Page = ({ params: { id } }) => {
         onClick={redirectToHome}
         style={{
           position: "absolute",
-          bottom: "10px",
+          bottom: "-20px",
           left: "10px",
         }}
       >
