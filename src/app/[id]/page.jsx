@@ -40,29 +40,31 @@ const Page = ({ params: { id } }) => {
 
   return (
     <div style={{ position: "relative" }}>
-      <h1 className="text-center text-2xl py-5">{data?.title}</h1>
-      <div className="flex justify-center">
-        {data && (
-          <Image
-            className="py-5"
-            src={data.thumbnail}
-            alt="product image"
-            width={300}
-            height={300}
-            style={{ width: 300, height: 300 }}
-          />
-        )}
-      </div>
-      <h2 className="text-center py-5">
+      <div
+        className="w-full h-[50vh] bg-cover bg-no-repeat bg-center"
+        style={{
+          backgroundImage: `url(${data?.thumbnail})`,
+          boxShadow: "inset 0 0 10px rgba(0, 0, 0, 0.836)",
+        }}
+      ></div>
+      <h2 className="text-center py-5 text-xl font-bold">
         Eslogan: {data ? data.description : "Cargando..."}
       </h2>
-      <h2 className="text-center py-2">Marca: {data?.brand}</h2>
-      <h2 className="text-center py-2">Categoria: {data?.category}</h2>
-      <h2 className="text-center py-5">Disponibles: {data?.stock} unidades</h2>
+      <h2 className="text-center py-2 text-lg font-semibold">
+        Marca: {data?.brand}
+      </h2>
+      <h2 className="text-center py-2 text-lg font-semibold">
+        Categoria: {data?.category}
+      </h2>
+      <h2 className="text-center py-5 text-lg font-semibold">
+        Disponibles: {data?.stock} unidades
+      </h2>
 
       <div className="mx-[25%] bg-slate-600 mb-10">
         <div className="pb-10">
-          <h1 className="text-center text-2xl py-2"> Galeria de Fotos</h1>
+          <h1 className="text-center text-2xl py-2 font-semibol font-semibold">
+            Galeria de Fotos
+          </h1>
           <div className="flex justify-center pb-5">
             {selectedImage && (
               <Image
@@ -99,7 +101,7 @@ const Page = ({ params: { id } }) => {
       </div>
 
       <button
-        className="p-2 bg-red-400 rounded-md px-5"
+        className="px-4 py-2 bg-red-400 text-white rounded-md hover:bg-red-600"
         onClick={redirectToHome}
         style={{
           position: "absolute",

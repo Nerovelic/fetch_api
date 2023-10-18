@@ -11,23 +11,26 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center item-center content-center">
-      <p className="text-center text-xl pt-10">{product.title}</p>
-      <div className="flex justify-center">
+    <div className=" bg-slate-300 border border-gray-300 rounded-lg p-5 shadow-md w-80 my-5">
+      <p className="text-gray-700 text-2xl mt-1 text-center mb-5">
+        {product.title}
+      </p>
+      <div className="relative">
         <Image
-          className="py-5"
           src={product.thumbnail}
           alt="product image"
-          width={200}
-          height={200}
-          style={{ width: 200, height: 200 }}
+          objectFit="cover"
+          className="rounded-lg"
+          width={300}
+          height={300}
+          style={{ width: 300, height: 300 }}
         />
       </div>
-      <h2 className="text-center">$ {product.price}</h2>
-      <div className="flex flex-row justify-center items-center w-full pt-5">
+      <p className="text-gray-700 text-2xl mt-4">${product.price}</p>
+      <div className="flex justify-center mt-3">
         <button
-          className="p-2 bg-red-400 rounded-md px-5"
           onClick={redirectToProduct}
+          className="px-4 py-2 bg-red-400 text-white rounded-md hover:bg-red-600"
         >
           Ver más
         </button>

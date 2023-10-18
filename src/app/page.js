@@ -10,9 +10,11 @@ const HomePage = async () => {
       <div>
         <h1 className="text-center text-3xl pb-5">Tienda online</h1>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mx-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 mx-5">
         {products.map((product) => (
-          <ProductCard product={product} />
+          <div className="mx-2">
+            <ProductCard product={product} />
+          </div>
         ))}
       </div>
     </div>
