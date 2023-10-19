@@ -41,7 +41,7 @@ const Page = ({ params: { id } }) => {
   return (
     <div style={{ position: "relative" }}>
       <div
-        className="w-full h-[50vh] bg-cover bg-no-repeat bg-center"
+        className="w-full h-[50vh] bg-fixed bg-cover bg-no-repeat bg-center"
         style={{
           backgroundImage: `url(${data?.thumbnail})`,
           boxShadow: "inset 0 0 10px rgba(0, 0, 0, 0.836)",
@@ -51,13 +51,13 @@ const Page = ({ params: { id } }) => {
         Eslogan: {data ? data.description : "Cargando..."}
       </h2>
       <h2 className="text-center py-2 text-lg font-semibold">
-        Marca: {data?.brand}
+        Marca: {data ? data.brand : "Cargando..."}
       </h2>
       <h2 className="text-center py-2 text-lg font-semibold">
-        Categoria: {data?.category}
+        Categoria: {data ? data.category : "Cargando..."}
       </h2>
       <h2 className="text-center py-5 text-lg font-semibold">
-        Disponibles: {data?.stock} unidades
+        Disponibles: {data ? data.stock : "Cargando..."} unidades
       </h2>
 
       <div className="mx-[25%] bg-slate-600 mb-10">
@@ -101,7 +101,7 @@ const Page = ({ params: { id } }) => {
       </div>
 
       <button
-        className="px-4 py-2 bg-red-400 text-white rounded-md hover:bg-red-600"
+        className="px-4 py-2 bg-orange-300 text-black rounded-md hover:bg-orange-600"
         onClick={redirectToHome}
         style={{
           position: "absolute",
@@ -109,7 +109,7 @@ const Page = ({ params: { id } }) => {
           left: "10px",
         }}
       >
-        Home
+        Regresar
       </button>
     </div>
   );

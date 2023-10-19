@@ -26,6 +26,7 @@ const ProductCard = ({ product }) => {
           style={{ width: 300, height: 300 }}
         />
       </div>
+      <p className="text-gray-700 text-2xl mt-4">{product.rating}</p>
       <p className="text-gray-700 text-2xl mt-4">${product.price}</p>
       <div className="flex justify-center mt-3">
         <button
